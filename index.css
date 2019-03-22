@@ -1,0 +1,40 @@
+
+html,body{
+    height: 100%;
+    opacity: .7;
+    -webkit-app-region: drag;
+}
+html{
+    /*padding: 0 20px 20px 0;*/
+    box-sizing: border-box;
+}
+.main-container {
+    position: relative;
+    padding-top: 30px;
+    border-radius: 3px;
+    overflow: hidden;
+    background: rgba(0, 255, 243, 0.15);
+    height: calc(100% - 30px);
+    /*box-shadow: 10px 10px 10px rgba(0,0,255,.2);*/
+}
+
+body, h1, h2 {
+    /*-webkit-app-region: drag;*/
+    /*background: #ccc;*/
+    /*background: transparent;*/
+    margin: 0;
+}
+h1{
+    -webkit-app-region: drag;background: gray;
+    width: 100%;
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    text-align: center;
+}
+#container{
+    height: 100%;
+    overflow: hidden;
+}
