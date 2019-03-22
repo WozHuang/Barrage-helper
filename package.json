@@ -1,0 +1,32 @@
+{
+  "name": "barrage-helper",
+  "version": "1.0.0",
+  "description": "A tool to read barrage",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "electron_build": "electron-packager ./ --platform=win32 --arch=x64 --overwrite --asar",
+    "server": "node server.js"
+  },
+  "repository": "https://github.com/WozHuang/Barrage-helper",
+  "keywords": [
+    "Barrage"
+  ],
+  "author": "WozHuang",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "electron": "^4.0.7",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "3.2.0",
+    "koa-router": "7.0.0",
+    "mitt": "^1.1.3",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "electron-packager": "^13.1.1",
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  }
+}
