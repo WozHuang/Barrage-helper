@@ -1,28 +1,26 @@
 # barrage-helper
 
-> An electron-vue project
+> 一个使用electron-vue制作的弹幕助手
+
+目前只有连接虎牙弹幕的功能，目前能够
+
+- 获取房间信息
+- 播报弹幕
+- 窗口置顶
+
+### 预览
+
+![](assets/preview1.png)![](assets/preview2.png)
 
 #### Build Setup
 
 ``` bash
-# install dependencies
-npm install
 
-# serve with hot reload at localhost:9080
+# 启动
 npm run dev
-
-# build electron application for production
-npm run build
-
-# run unit tests
-npm test
-
-
-# lint all JS/Vue component files in `src/`
-npm run lint
 
 ```
 
 ---
 
-This project was generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about the original structure can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).
+Generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue)
