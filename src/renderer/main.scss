@@ -1,0 +1,28 @@
+@import "./reset.scss";
+* {
+  margin: 0;
+  font-family: "Microsoft YaHei", sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+.drag {
+  -webkit-app-region: drag;
+  //user-select: none;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+.clearFix:after{
+  content: '';
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+
+$main-blue:#409EFF;

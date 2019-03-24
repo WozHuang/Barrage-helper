@@ -1,18 +1,33 @@
 module.exports = {
+  root: true,
+  parser: 'babel-eslint',
+  parserOptions: {
+    sourceType: 'module'
+  },
   env: {
     browser: true,
-    commonjs: true,
-    es6: true,
-    node: true,
+    node: true
   },
   extends: 'airbnb-base',
   globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
+    __static: true
   },
-  parserOptions: {
-    ecmaVersion: 2018,
-  },
-  rules: {
-  },
+  plugins: [
+    'html'
+  ],
+  'rules': {
+    'global-require': 0,
+    'import/no-unresolved': 0,
+    'no-param-reassign': 0,
+    'no-shadow': 0,
+    'import/extensions': 0,
+    'import/newline-after-import': 0,
+    'no-multi-assign': 0,
+    // allow debugger during development
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+    // 'no-console' : process.env.NODE_ENV === 'production' ? 2 : 0,
+    'no-use-before-define': 0,
+    'no-new-func': 0,
+    'comma-dangle': 0,
+  }
 };
