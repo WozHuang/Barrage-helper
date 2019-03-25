@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * This file is used specifically and only for development. It installs
  * `electron-debug` & `vue-devtools`. There shouldn't be any need to
@@ -5,13 +6,11 @@
  *  environment.
  */
 
-/* eslint-disable */
-
 // Install `electron-debug` with `devtron`
-import { BrowserWindow } from "electron";
-import path from 'path'
+import { BrowserWindow } from 'electron';
+import path from 'path';
 
-require('electron-debug')({ showDevTools: false })
+require('electron-debug')({ showDevTools: false });
 
 // Install `vue-devtools`
 require('electron').app.on('ready', () => {
@@ -23,8 +22,8 @@ require('electron').app.on('ready', () => {
   //   })
 
   // 安装vue-devtools
-  BrowserWindow.addDevToolsExtension(path.resolve(__dirname, '../../devTools/vue-devtools'))
-})
+  BrowserWindow.addDevToolsExtension(path.resolve(__dirname, '../../devTools/vue-devtools'));
+});
 
 // Require `main` process to boot app
-require('./index')
+require('./index');
