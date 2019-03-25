@@ -9,7 +9,6 @@
 - 窗口置顶
 
 ### 预览
-<style>img{height: 350px;margin-right: 10px;}</style>
 ![](assets/preview1.png)![](assets/preview2.png)![](assets/preview3.png)
 
 ### 开始
