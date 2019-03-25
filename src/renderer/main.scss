@@ -25,4 +25,19 @@ html, body {
   clear: both;
 }
 
-$main-blue:#409EFF;
+//$font-color: #333;
+//$main-blue: #409EFF;
+
+// 名字颜色
+$main-blue: var(--mainBlue, #0087ff);
+// 主要的文字颜色
+$font-color: var(--fontColor, #ddd);
+
+#app {
+  --mainBlue: #3bd8e8;
+  //--fontColor: #fff;
+}
+
+@mixin no-drag{
+  -webkit-app-region: no-drag;
+}

@@ -5,13 +5,11 @@ import Vuex from 'vuex';
 import { createPersistedState } from 'vuex-electron';
 
 import modules from './modules';
-import getters from './getters';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   modules,
-  getters,
   plugins: [
     createPersistedState(),
     //  这个破插件不能用，用了就不能dispatch，不知道为什么

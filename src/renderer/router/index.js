@@ -16,6 +16,11 @@ export default new Router({
       component: require('@/views/huya/BarrageList').default,
     },
     {
+      path: '/Setting',
+      name: 'Setting',
+      component: require('@/views/setting/Setting').default,
+    },
+    {
       path: '*',
       redirect: '/',
     },

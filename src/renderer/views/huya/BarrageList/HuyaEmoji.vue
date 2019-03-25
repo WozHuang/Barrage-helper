@@ -8,6 +8,7 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
   import parseMessage from '@/util/Huya/emoji';
   import readText from '@/util/baiduTTS';
 
@@ -24,14 +25,20 @@
         nodeList: [],
       };
     },
+    computed: {
+      ...mapGetters(['readBarrage', 'readEmoji'])
+    },
     mounted() {
       this.nodeList = parseMessage(this.text);
-      this.readMessage();
+      if (this.readBarrage) {
+        this.readMessage();
+      }
     },
     methods: {
       // 读出弹幕
       readMessage() {
-        const message = this.nodeList.map(item => (item.content || item.alt)).join('');
+        const message = this.nodeList.map(item => (item.content || (this.readEmoji && item.alt) || ''))
+          .join('');
         readText(message);
       },
     },
