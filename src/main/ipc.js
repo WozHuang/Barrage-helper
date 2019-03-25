@@ -1,4 +1,4 @@
-import { ipcMain } from 'electron';
+import { ipcMain } from 'electron'; // eslint-disable-line
 export default function ipc(mainWindow) {
 // In main process.
 //   ipcMain.on('asynchronous-message', (event, arg) => {
