@@ -6,7 +6,6 @@
             <div class="btn no-drag"  :class="classObj" @click="toggleStick"></div>
             <div class="btn close_btn no-drag" @click="close"></div>
         </div>
-        <div class="header-body">main</div>
     </div>
 </template>
 
@@ -42,12 +41,13 @@
       },
       close() {
         closeMainWindow();
-      }
+      },
     },
   };
 </script>
 
 <style scoped lang="scss">
+    @import "~@/main.scss";
     .header-wrapper{
         display: flex;
         flex-direction: column;
@@ -57,6 +57,7 @@
         top: 0;
         left: 0;
         z-index: 1;
+        color: $font-color;
         /*user-select: none;*/
         .header-title{
             width: 100%;
@@ -66,18 +67,11 @@
             flex-direction: row;
             justify-content: flex-end;
             align-items: center;
-            background: rgba(128, 128, 128, 0.8);
             .roomName{
                 text-align: left;
                 flex-grow: 1;
                 padding-left: 10px;
             }
-        }
-        .header-body{
-            height: calc(100% - 30px);
-            flex: 1;
-            background: blue;
-            display: none;
         }
     }
 

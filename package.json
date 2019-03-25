@@ -1,10 +1,14 @@
 {
   "name": "barrage-helper",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "author": "黄小Z <909695699@qq.com>",
   "description": "弹幕助手",
   "license": "MIT",
   "main": "./dist/electron/main.js",
+  "repository": "https://github.com/WozHuang/Barrage-helper",
+  "keywords": [
+    "Barrage"
+  ],
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",
     "build:dir": "node .electron-vue/build.js && electron-builder --dir",

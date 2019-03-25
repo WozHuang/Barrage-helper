@@ -1,6 +1,7 @@
 <template>
     <div id="app">
         <div class="app-content">
+            <div class="background-mask" :style="backgroundClass"></div>
             <router-view></router-view>
         </div>
     </div>
@@ -12,15 +13,22 @@
     mounted() {
       this.init();
     },
+    computed: {
+      backgroundClass() {
+        return {
+          background: this.$store.state.global.backgroundColor,
+        };
+      }
+    },
     methods: {
       init() {
         this.$store.dispatch('toggleStick', { stick: false });
       }
-    }
+    },
   };
 </script>
 
-<style rel="stylesheet">
+<style lang="scss">
     /* CSS */
     @import "~@/main.scss";
 
@@ -28,13 +36,23 @@
         height: 100%;
         border-radius: 5px;
         /*padding: 2px;*/
-        border: 2px solid rgba(127, 127, 127, 0.3);
+        /*border: 2px solid rgba(127, 127, 127, 0);*/
+        padding: 2px;
         box-sizing: border-box;
         overflow: hidden;
+        position: relative;
     }
 
     .app-content {
         height: 100%;
-        /*-webkit-app-region: drag;*/
+        box-shadow: 3px 3px 5px rgba(0,0,0,.2);
+        .background-mask{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
     }
 </style>

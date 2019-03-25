@@ -33,6 +33,6 @@
         color: $main-blue;
     }
     .content{
-        color: #333;
+        color: $font-color;
     }
 </style>

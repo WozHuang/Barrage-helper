@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <list-header :roomId="roomId"></list-header>
-        <div class="barrage-list drag">
+        <div class="barrage-list main">
             <el-scrollbar ref="scroller" style="height: 100%;overflow-x: hidden;">
                 <barrage-item v-for="barrage in barrageList" :content="barrage" :key="barrage.time"></barrage-item>
             </el-scrollbar>
@@ -20,18 +20,19 @@
     data() {
       return {
         barrageList: [],
-        roomId: 11342412,
         socket: null,
       };
     },
     mounted() {
-      this.roomId = this.$route.query.roomId;
       this.initSocket();
     },
     computed: {
       scrollerWrap() {
         return this.$refs.scroller.wrap;
       },
+      roomId() {
+        return this.$store.getters.roomId;
+      }
     },
     methods: {
       initSocket() {
@@ -69,24 +70,25 @@
   };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     .container {
         height: 100%;
         display: flex;
         flex-direction: column;
         position: relative;
+        .main {
+            width: 100%;
+            height: calc(100% - 30px);
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            top: 30px;
+        }
     }
 
     .barrage-list {
-        width: 100%;
-        height: calc(100% - 30px);
         box-sizing: border-box;
         padding: 10px;
-        overflow: hidden;
-        background: rgba(128, 128, 128, 0.36);
-        position: absolute;
-        left: 0;
-        top: 30px;
     }
 
     /deep/ .el-scrollbar__wrap {
