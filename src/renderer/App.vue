@@ -32,7 +32,8 @@
         box-sizing: border-box;
         overflow: hidden;
     }
-    .app-content{
+
+    .app-content {
         height: 100%;
         /*-webkit-app-region: drag;*/
     }

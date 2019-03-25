@@ -15,11 +15,6 @@ export default new Router({
       name: 'BarrageList',
       component: require('@/views/huya/BarrageList').default,
     },
-    // {
-    //   path: '/',
-    //   name: 'landing-page',
-    //   component: require('@/components/LandingPage').default,
-    // },
     {
       path: '*',
       redirect: '/',

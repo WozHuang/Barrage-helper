@@ -43,10 +43,6 @@
         color: white;
     }
 
-    .input {
-
-    }
-
     .btn {
         width: 100px;
         margin-top: 30px;
