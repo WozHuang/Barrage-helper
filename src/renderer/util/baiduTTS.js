@@ -29,7 +29,7 @@ function timeout() {
   timer = setTimeout(() => {
     timer = null;
     onEnded();
-  }, 1000);
+  }, 10000);
 }
 
 export default function addToList(str) {
