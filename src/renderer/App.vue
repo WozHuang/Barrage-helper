@@ -45,8 +45,9 @@
 
     .app-content {
         height: 100%;
-        box-shadow: 3px 3px 5px rgba(0,0,0,.2);
-        .background-mask{
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, .2);
+
+        .background-mask {
             width: 100%;
             height: 100%;
             position: absolute;
