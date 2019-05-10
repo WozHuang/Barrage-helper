@@ -43,7 +43,7 @@ function createWindow() {
   });
 }
 
-app.on('ready', createWindow);
+app.on('ready', () => setTimeout(createWindow, 1000));
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
