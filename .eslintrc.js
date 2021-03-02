@@ -29,5 +29,6 @@ module.exports = {
     'no-use-before-define': 0,
     'no-new-func': 0,
     'comma-dangle': 0,
+    'linebreak-style': 0,
   }
 };
