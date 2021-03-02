@@ -22,4 +22,6 @@ npm run dev
 
 ---
 
+解决node 14.4下打包报错的问题，[参考](https://www.jianshu.com/p/bdf0a23e7257)
+
 Generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue)
