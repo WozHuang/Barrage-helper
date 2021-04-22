@@ -6,12 +6,14 @@ const router = require('koa-router')();
 const bodyParser = require('koa-bodyparser');
 const config = require('../config');
 const { getSign } = require('./sign');
+const logger = require('./logger');
 
 const app = new Koa();
 const appId = config.huya.openId;
 
+app.use(logger());
 app.use(async (ctx, next) => {
-  console.log(`Process ${ctx.request.method} ${ctx.request.url}...`);
+  // console.log(`Process ${ctx.request.method} ${ctx.request.url}...`);
   try {
     await next();
   } catch (e) {
@@ -28,7 +30,9 @@ router.get('/:doName/:roomId', async (ctx, next) => {
     throw new Error(`doName应是${['getMessageNotice', 'getSendItemNotice', 'getVipEnterBannerNotice'].join()}中的一个`);
   }
   const data = { roomId: parseInt(roomId, 10) };
-  ctx.response.body = `wss://openapi.huya.com/index.html?do=${doName}&data=${JSON.stringify(data)}&appId=${appId}&timestamp=${now}&sign=${getSign(data, now)}`;
+  ctx.response.body = `wss://openapi.huya.com/index.html?do=${doName}&data=${JSON.stringify(
+    data
+  )}&appId=${appId}&timestamp=${now}&sign=${getSign(data, now)}`;
   await next();
 });
 
@@ -38,5 +42,5 @@ router.get('/', async (ctx) => {
 
 app.use(bodyParser());
 app.use(router.routes());
-app.listen(config.server.port);
-console.log(`App is listening at port ${config.server.port}...`);
+app.listen(config.server.port, '0.0.0.0');
+console.log(`[${new Date().toLocaleString()}]   App is listening at port ${config.server.port}...`);
