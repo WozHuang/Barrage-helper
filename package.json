@@ -106,7 +106,7 @@
     "eslint-plugin-html": "^4.0.3",
     "eslint-plugin-import": "^2.12.0",
     "file-loader": "^1.1.11",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "inject-loader": "^4.0.1",
     "karma": "^2.0.2",
     "karma-chai": "^0.1.0",
