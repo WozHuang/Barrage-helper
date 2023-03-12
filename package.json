@@ -1,14 +1,18 @@
 {
-  "name": "my-new-app",
-  "productName": "my-new-app",
+  "name": "barrage-helper",
+  "productName": "Barrage-helper",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Barrage-helper",
   "main": ".webpack/main",
   "scripts": {
     "dev": "electron-forge start",
+    "start-server": "node out/server/index.js",
+    "dev-server": "nodemon --inspect out/server/index.js --watch ./out/server",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
+    "build-server:watch": "npm run build-server -- --mode=development --devtool=source-map --watch",
+    "build-server": "webpack --config ./config/webpack.server.config.ts",
     "lint": "eslint --ext .ts,.tsx ."
   },
   "engines": {
@@ -39,13 +43,19 @@
     "eslint-plugin-import": "^2.25.0",
     "fork-ts-checker-webpack-plugin": "^8.0.0",
     "node-loader": "^2.0.0",
+    "nodemon": "^2.0.21",
     "style-loader": "^3.0.0",
     "ts-loader": "^9.2.2",
     "ts-node": "^10.0.0",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "webpack-cli": "^5.0.1"
   },
   "dependencies": {
+    "dotenv": "^16.0.3",
     "electron-squirrel-startup": "^1.0.0",
+    "koa": "^2.14.1",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^12.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
