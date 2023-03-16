@@ -4,6 +4,8 @@
   "version": "1.0.0",
   "description": "Barrage-helper",
   "main": ".webpack/main",
+  "private": true,
+  "license": "GPL-3.0",
   "scripts": {
     "dev": "electron-forge start",
     "start-server": "node out/server/index.js",
@@ -16,15 +18,13 @@
     "lint": "eslint --ext .ts,.tsx ."
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=16 <=18"
   },
   "keywords": [],
   "author": {
     "name": "WozHuang",
     "email": "wozhuang96@gmail.com"
   },
-  "private": true,
-  "license": "GPL-3.0",
   "devDependencies": {
     "@electron-forge/cli": "^6.0.5",
     "@electron-forge/maker-deb": "^6.0.5",
@@ -32,6 +32,7 @@
     "@electron-forge/maker-squirrel": "^6.0.5",
     "@electron-forge/maker-zip": "^6.0.5",
     "@electron-forge/plugin-webpack": "^6.0.5",
+    "@types/node": "^16",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
@@ -48,7 +49,10 @@
     "ts-loader": "^9.2.2",
     "ts-node": "^10.0.0",
     "typescript": "^4.9.5",
-    "webpack-cli": "^5.0.1"
+    "webpack": "^5",
+    "webpack-cli": "^5.0.1",
+    "webpack-manifest-plugin": "^5.0.0",
+    "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
     "dotenv": "^16.0.3",
