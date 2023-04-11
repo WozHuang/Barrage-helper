@@ -22,10 +22,15 @@ const router = koaRouter()
     const now = Math.round(Date.now() / 1000);
     const { doName, roomId } = ctx.params;
     if (!['getMessageNotice', 'getSendItemNotice', 'getVipEnterBannerNotice'].includes(doName)) {
-      throw new Error(`doName应是${['getMessageNotice', 'getSendItemNotice', 'getVipEnterBannerNotice'].join()}中的一个`);
+      throw new Error(
+        `doName应是${['getMessageNotice', 'getSendItemNotice', 'getVipEnterBannerNotice'].join()}中的一个`
+      );
     }
     const data = JSON.stringify({ roomId: parseInt(roomId, 10) });
-    ctx.response.body = `wss://openapi.huya.com/index.html?do=${doName}&data=${data}&appId=${HUYA_OPENID}&timestamp=${now}&sign=${getSign(data, now)}`;
+    ctx.response.body = `wss://openapi.huya.com/index.html?do=${doName}&data=${data}&appId=${HUYA_OPENID}&timestamp=${now}&sign=${getSign(
+      data,
+      now
+    )}`;
     await next();
   })
   .get('/', async (ctx) => {

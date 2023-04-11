@@ -33,4 +33,4 @@ const outputDir = path.resolve(__dirname, '../.react-devtools');
       extract: true
     }
   );
-}());
+})();

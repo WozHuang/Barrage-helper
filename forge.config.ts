@@ -23,13 +23,13 @@ const config: ForgeConfig = {
             js: './src/render/index.ts',
             name: 'main_window',
             preload: {
-              js: './src/preload/index.ts',
-            },
-          },
-        ],
-      },
-    }),
-  ],
+              js: './src/preload/index.ts'
+            }
+          }
+        ]
+      }
+    })
+  ]
 };
 
 export default config;

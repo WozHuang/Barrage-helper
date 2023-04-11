@@ -41,15 +41,15 @@ const config: Configuration = {
           test: /[\\/]node_modules[\\/]/,
           priority: -10,
           chunks: 'initial'
-        },
+        }
       }
     }
   },
   module: {
-    rules,
+    rules
   },
   resolve: {
-    extensions: ['.js', '.ts', '.json'],
+    extensions: ['.js', '.ts', '.json']
   },
   plugins: [
     // 输出 manifest.json 以便索引文件
@@ -65,7 +65,7 @@ const config: Configuration = {
   // 还可以考虑通过 webpack-node-externals 插件实现
   externals: [nodeExternals()],
   // 指定外部依赖引入方式
-  externalsType: 'node-commonjs',
+  externalsType: 'node-commonjs'
 };
 
 export default config;
