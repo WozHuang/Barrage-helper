@@ -10,7 +10,20 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:import/recommended',
     'plugin:import/electron',
-    'plugin:import/typescript'
+    'plugin:import/typescript',
+    'plugin:prettier/recommended',
+    'prettier',
+    'plugin:react-hooks/recommended',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime'
   ],
-  parser: '@typescript-eslint/parser'
+  parser: '@typescript-eslint/parser',
+  rules: {
+    'react/self-closing-comp': [2, { component: true, html: false }],
+    'react/react-in-jsx-scope': 0,
+    'react/jsx-curly-brace-presence': [1, 'never']
+  },
+  settings: {
+    react: { version: 'detect' }
+  }
 };

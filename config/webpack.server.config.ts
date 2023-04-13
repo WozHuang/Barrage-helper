@@ -2,7 +2,6 @@ import path from 'node:path';
 import { Configuration } from 'webpack';
 import { rules } from './webpack.rules';
 // import TerserPlugin from 'terser-webpack-plugin';
-import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 import nodeExternals from 'webpack-node-externals';
 
 const config: Configuration = {
@@ -51,10 +50,7 @@ const config: Configuration = {
   resolve: {
     extensions: ['.js', '.ts', '.json']
   },
-  plugins: [
-    // 输出 manifest.json 以便索引文件
-    // new WebpackManifestPlugin({})
-  ],
+  plugins: [],
 
   // @link https://webpack.docschina.org/configuration/externals/
   // 不打包依赖
