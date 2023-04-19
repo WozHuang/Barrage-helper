@@ -1,8 +1,8 @@
 import type { Configuration } from 'webpack';
 
-import { rules } from './webpack.rules';
 import { DefinePlugin } from 'webpack';
 import * as process from 'process';
+import { resolve, rules } from './webpack.common';
 
 export const mainConfig: Configuration = {
   /**
@@ -14,9 +14,7 @@ export const mainConfig: Configuration = {
   module: {
     rules
   },
-  resolve: {
-    extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.json']
-  },
+  resolve,
   plugins: [
     new DefinePlugin({
       __DEV__: process.env.NODE_ENV === 'development'

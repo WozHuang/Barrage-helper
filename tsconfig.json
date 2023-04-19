@@ -4,7 +4,7 @@
     "target": "ES6",
     "allowJs": true,
     "module": "commonjs",
-    "skipLibCheck": true,
+    "skipLibCheck": false,
     "esModuleInterop": true,
     "noImplicitAny": false,
     "sourceMap": true,
@@ -13,7 +13,11 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "paths": {
-      "*": ["node_modules/*"]
+      "*": ["node_modules/*"],
+      "@shared/*": ["src/shared/*"],
+      "@main/*": ["src/main/*"],
+      "@render/*": ["src/render/*"],
+      "@preload/*": ["src/preload/*"]
     },
     "jsx": "react-jsx"
   },

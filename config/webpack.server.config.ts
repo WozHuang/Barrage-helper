@@ -1,8 +1,8 @@
 import path from 'node:path';
 import { Configuration } from 'webpack';
-import { rules } from './webpack.rules';
 // import TerserPlugin from 'terser-webpack-plugin';
 import nodeExternals from 'webpack-node-externals';
+import { resolve, rules } from './webpack.common';
 
 const config: Configuration = {
   mode: 'production',
@@ -47,9 +47,7 @@ const config: Configuration = {
   module: {
     rules
   },
-  resolve: {
-    extensions: ['.js', '.ts', '.json']
-  },
+  resolve,
   plugins: [],
 
   // @link https://webpack.docschina.org/configuration/externals/

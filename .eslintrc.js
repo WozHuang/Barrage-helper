@@ -21,9 +21,11 @@ module.exports = {
   rules: {
     'react/self-closing-comp': [2, { component: true, html: false }],
     'react/react-in-jsx-scope': 0,
-    'react/jsx-curly-brace-presence': [1, 'never']
+    'react/jsx-curly-brace-presence': [1, 'never'],
+    'import/no-named-as-default-member': 0
   },
   settings: {
-    react: { version: 'detect' }
+    react: { version: 'detect' },
+    'import/resolver': { typescript: { project: './tsconfig.json' } }
   }
 };

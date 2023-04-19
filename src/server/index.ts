@@ -10,7 +10,7 @@ dotenv.config();
 
 const HUYA_SECRET_ID = process.env.HUYA_SECRET_ID;
 const HUYA_OPENID = process.env.HUYA_OPENID;
-const PORT = process.env.PORT || 3000;
+const PORT = parseInt(process.env.PORT) || 3000;
 
 function getSign(data: string, timestamp) {
   const query = `data=${data}&key=${HUYA_SECRET_ID}&timestamp=${timestamp}`;
