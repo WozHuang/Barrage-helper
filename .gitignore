@@ -97,4 +97,4 @@ package-lock.json
 pnpm-lock.yaml
 
 # devtools
-.react-devtools
+.devtools

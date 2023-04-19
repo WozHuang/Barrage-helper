@@ -1,5 +1,5 @@
 node_modules
 out
 .webpack
-.react-devtools
+.devtools
 .idea

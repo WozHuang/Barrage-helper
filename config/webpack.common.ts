@@ -1,5 +1,5 @@
 import type IForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
-import { ModuleOptions, Configuration } from 'webpack';
+import { ModuleOptions, Configuration, DefinePlugin } from 'webpack';
 import path from 'path';
 
 export const resolve: Configuration['resolve'] = {
@@ -46,6 +46,9 @@ export const rules: Required<ModuleOptions>['rules'] = [
 const ForkTsCheckerWebpackPlugin: typeof IForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 export const plugins = [
+  new DefinePlugin({
+    __DEV__: process.env.NODE_ENV === 'development'
+  }),
   new ForkTsCheckerWebpackPlugin({
     logger: 'webpack-infrastructure'
   })
