@@ -1,8 +1,10 @@
-import { SettingsStore } from './settingsStore';
 import { createContext, useContext } from 'react';
+import { Setting } from './setting';
+import { Theme } from './theme';
 
 export class RootStore {
-  settings = new SettingsStore(this);
+  setting = new Setting();
+  theme = new Theme();
 }
 
 export const store = new RootStore();

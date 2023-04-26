@@ -1,23 +1,29 @@
 import './App.less';
-import { Box, Button, Center, ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { Button, Center, ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { createHashRouter, Link, RouterProvider } from 'react-router-dom';
-import { SketchPicker } from 'react-color';
 import { store, StoreContext, useStore } from './store';
+import { observer } from 'mobx-react';
+import ColorPicker from './components/ColorPicker';
 
 const theme = extendTheme({ styles: { global: () => ({ body: { bg: 'transparent' } }) } });
 
-const Content = () => {
-  const { settings } = useStore();
+const Content = observer(() => {
+  const { setting, theme } = useStore();
+  const bgColor = theme.palette['--bg-color'];
   return (
     <Center p={2}>
-      <Button className='no-drag' colorScheme='blue' onClick={() => settings.toggleStick()}>
-        toggle stick
+      <Button className='no-drag' colorScheme='blue' onClick={() => setting.toggleStick()}>
+        toggle stick: {setting.stick ? 'true' : 'false'}
       </Button>
-      <SketchPicker />
-      <Box>12345</Box>
+      <ColorPicker
+        value={bgColor}
+        onChange={({ rgb }) => {
+          theme.updatePalette({ '--bg-color': `rgba(${rgb.r},${rgb.g},${rgb.b},${rgb.a})` });
+        }}
+      />
     </Center>
   );
-};
+});
 
 const router = createHashRouter([
   {
@@ -43,9 +49,7 @@ const App = () => {
   return (
     <StoreContext.Provider value={store}>
       <ChakraProvider theme={theme}>
-        <Box h='100%' w='100%'>
-          <RouterProvider router={router} />
-        </Box>
+        <RouterProvider router={router} />
       </ChakraProvider>
     </StoreContext.Provider>
   );
